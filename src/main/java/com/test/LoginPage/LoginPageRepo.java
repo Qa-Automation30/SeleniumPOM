@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.test.BaseClass.BaseClass;
 
 public class LoginPageRepo extends BaseClass {
-	public LoginPageRepo() {
+	public LoginPageRepo(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 	
