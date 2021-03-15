@@ -34,7 +34,7 @@ public class BaseClass {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
 		}
 		else if(prop.getProperty("browser").equalsIgnoreCase("firefox"))

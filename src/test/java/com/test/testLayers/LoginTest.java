@@ -1,28 +1,29 @@
 package com.test.testLayers;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.test.BaseClass.BaseClass;
-import com.test.LoginPage.LoginPageRepo;
-import com.test.commanFunctions.WaitLib;
+import com.test.LoginPage.LoginPageAction;
+import com.test.dashboardPage.DashboardAction;
 
 public class LoginTest extends BaseClass {
-	LoginPageRepo loginrepo;
-
+	LoginPageAction loginpageaction;
+	DashboardAction dashboradaction;
 	@BeforeMethod
 	public void setUp() {
 		setUpWebDriver();
-		loginrepo = new LoginPageRepo(driver);
+		loginpageaction = new LoginPageAction(driver);
+		dashboradaction = new DashboardAction(driver);
 	}
 
 	@Test
 	public void loginTest() {
 		try {
-			WaitLib.sendKeys(driver, 30, prop.getProperty("userName"), loginrepo.getUserName());
-			WaitLib.sendKeys(driver, 10, prop.getProperty("password"), loginrepo.getPassword());
-			WaitLib.elementIsClickable(driver, 30, loginrepo.getLoginBtn());
+			loginpageaction.loginFunction(prop.getProperty("userName"), prop.getProperty("password"));
+			Assert.assertEquals(dashboradaction.validateHeaderText(),"group automation");
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}

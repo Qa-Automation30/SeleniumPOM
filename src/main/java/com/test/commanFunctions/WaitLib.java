@@ -15,10 +15,10 @@ public class WaitLib extends BaseClass {
 		wait = new WebDriverWait(driver, time);
 		wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(_sendKey);	
 	}
-	public static void elementIsClickable(WebDriver driver,int _time, WebElement element)
+	public static void elementIsVisible(WebDriver driver,int _time, WebElement element)
 	{
 		wait = new WebDriverWait(driver, _time);
-		wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 }
