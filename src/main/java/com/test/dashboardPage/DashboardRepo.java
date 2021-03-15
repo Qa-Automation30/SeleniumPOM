@@ -20,7 +20,27 @@ public class DashboardRepo extends BaseClass {
 	private WebElement newCompany;
 	@FindBy(xpath="(//td[@class='headertext'])[1]")
 	private WebElement headerText;
+	@FindBy(id="company_name")
+	private WebElement companyName;
+	@FindBy(xpath="//strong[contains(text(),'Status')]/parent::td/following-sibling::td/select")
+	private WebElement status;
+	@FindBy(xpath="//select[@name='category']")
+	private WebElement category;
+	@FindBy(xpath="//select[@name='source']")
+	private WebElement source;
 	
+	public WebElement getSource() {
+		return source;
+	}
+	public WebElement getStatus() {
+		return status;
+	}
+	public WebElement getCategory() {
+		return category;
+	}
+	public WebElement getCompanyName() {
+		return companyName;
+	}
 	public WebElement getHeaderText() {
 		return headerText;
 	}
