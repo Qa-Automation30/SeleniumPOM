@@ -22,6 +22,7 @@ public class LoginTest extends BaseClass {
 		try {
 			WaitLib.sendKeys(driver, 30, prop.getProperty("userName"), loginrepo.getUserName());
 			WaitLib.sendKeys(driver, 10, prop.getProperty("password"), loginrepo.getPassword());
+			WaitLib.elementIsClickable(driver, 30, loginrepo.getLoginBtn());
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}

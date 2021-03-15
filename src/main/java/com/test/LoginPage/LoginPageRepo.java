@@ -16,7 +16,12 @@ public class LoginPageRepo extends BaseClass {
 	private WebElement userName;
 	@FindBy(name="password")
 	private WebElement password;
+	@FindBy(xpath="//input[@value='Login']")
+	private WebElement loginBtn;
 	
+	public WebElement getLoginBtn() {
+		return loginBtn;
+	}
 	public WebElement getUserName() {
 		return userName;
 	}
